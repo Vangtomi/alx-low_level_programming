@@ -9,7 +9,7 @@
  *
  * Return: Always 0 (success)
  */
-int check_num(cha *str)
+int check_num(char *str)
 {
 	/*declaring variable*/
 	unsigned int count;
