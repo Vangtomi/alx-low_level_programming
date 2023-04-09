@@ -3,12 +3,12 @@
 #include "main.h"
 
 /**
- * main - a program that prints the minimum number of coins
- *  make change for an amount of money.
- *  @argc: number of areguments
- *  @argv: arrays of argument
+ * main - prints the minimum number of coins to
+ * make change for an amount of money
+ * @argc: number of arguments
+ * @argv: array of arguments
  *
- *  Return: 0 for success and 1 for error
+ * Return: 0 (Success), 1 (Error)
  */
 int main(int argc, char *argv[])
 {
@@ -30,12 +30,12 @@ int main(int argc, char *argv[])
 		return (0);
 	}
 
-	for (j = 0; j < 5 && num > 0; j++)
+	for (j = 0; j < 5 && num >= 0; j++)
 	{
 		while (num >= coins[j])
 		{
 			result++;
-			num -= coins[i];
+			num -= coins[j];
 		}
 	}
 
