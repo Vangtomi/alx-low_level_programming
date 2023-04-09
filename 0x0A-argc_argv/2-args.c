@@ -4,7 +4,7 @@
 /**
  * main - a program that prints all arguments it receives
  * @argc: This counts the arguments received
- * @argc: Value of the arguments passed
+ * @argv: Value of the arguments passed
  *
  * Return: Always 0 (success)
  */
