@@ -9,9 +9,11 @@
  * Return: Always 0 (Success)
  */
 
-int main(int argc__attribute__((unused)), char *argv[])
+int main(int argc, char *argv[])
 {
 	printf("%s\n", *argv);
+
+	(void)argc; /*cast argc to void to suppress the unused variable*/
 
 	return (0);
 }
