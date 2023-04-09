@@ -7,22 +7,16 @@
  * check_num - check - strings in here are digits
  * @str: array str
  *
- * Return: Always 0 (success)
+ * Return: 1 if the string only contains digits, 0 otherwise
  */
 int check_num(char *str)
 {
-	/*declaring variable*/
-	unsigned int count;
-
-	count = 0;
-	while (count < strlen(str)) /*count strings*/
-
+	for (int i = 0; i < strlen(str); i++)
 	{
-		if (!isfigit(str[count])) /*check if str there are digits*/
-		{
-			return (0);
-		}
-		count++;
+		if (!isdigit(str[i]))
+	{
+		return (0);
+	}
 	}
 	return (1);
 }
@@ -32,34 +26,32 @@ int check_num(char *str)
  * @argc: count arguments
  * @argv: arguments
  *
- * Return: always 0 (success)
+ * Return: always 0 (success), 1 on error
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	/*Declaring variable*/
-	int count;
-	int str_to_int;
 	int sum = 0;
 
-	count = 1;
-	while (count < argc) /*Goes through the whole array*/
+	if (argc < 2)
 	{
-		if (check_num(argv[count]))
+		printf("0\n");
+		return (0);
+	}
+
+	for (int i = 1; i < argc; i++)
+	{
+		if (check_num(argv[i]))
 		{
-			str_to_int = atoi(argv[count]); /*ATOI --> convert string
-							  to int*/
-			sum += str_to_int;
+			sum += atoi(argv[i]);
 		}
-		/*Condition if one of the number contains symbols that 
-		 * are not digits*/
 		else
-		{printf("Error\n");
+		{
+			printf("Error\n");
 			return (1);
 		}
-		count++;
 	}
-	printf("%d\n", sum); /*print sum*/
 
-	retun (0);
+	printf("%d\n", sum);
+	return (0);
 }
