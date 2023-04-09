@@ -1,6 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * main - a program that ultiplies two numbers
+ * @argc: number of arguments
+ * @argv: arrays of arguments
+ *
+ * Return: 0 (success), 1 (Error)
+ */
+
 int main(int argc, char *argv[])
 {
 	int num1, num2, result;
